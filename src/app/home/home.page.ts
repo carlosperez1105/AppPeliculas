@@ -46,14 +46,14 @@ export class HomePage {
     }
   }
 
-  async verInformacion(id, title, overview, idioma, fecha, valoracion) {
+  async verInformacion(id, title, overview, original_language, release_date, vote_average) {
     let vpeliculas = this.peliculas.filter(function(e,id,title,overview) { return e.id == id, e.title == title, e.overview == overview, 
-      e.original_language = idioma, e.release_date = fecha, e.vote_average = valoracion}) [0];
+      e.original_language == original_language, e.release_date == release_date, e.vote_average == vote_average}) [0];
     let alerta = await this.alert.create({
         header: 'Detalles de ' + title,
-        message: 'Idioma: '  +  idioma + '<br>'
-         + 'Fecha: ' + fecha + '<br>'
-         + 'Valoración: ' + valoracion + '<br>' +
+        message: 'Idioma: '  +  original_language + '<br>'
+         + 'Fecha: ' + release_date + '<br>'
+         + 'Valoración: ' + vote_average + '<br>' +
          'Descripción: ' + overview,
         buttons: ['OK']
     });
