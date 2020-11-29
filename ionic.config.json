@@ -1,0 +1,7 @@
+{
+  "name": "AppPeliculas",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

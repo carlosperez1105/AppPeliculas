@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Películas
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Blank</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-searchbar (ionInput)="getItems($event)" ></ion-searchbar>
+
+  <ion-list>
+   <button >
+    <ion-item *ngFor = "let pelicula of items" (click) = "verInformacion(pelicula.id, pelicula.title, pelicula.overview,
+    pelicula.original_language, pelicula.release_date, pelicula.vote_average)">
+      <ion-label>
+        <h3 ion-text color='primary'> {{pelicula.title}} </h3>
+      </ion-label>
+    </ion-item>
+   </button> 
+  </ion-list>
+</ion-content>
